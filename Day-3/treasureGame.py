@@ -43,5 +43,5 @@ elif color =='yellow':
 elif color=='blue':
     print("Ohh no ! You are eaten by beasts game over !")
 else:
-    print("Game Ove!!!!")
+    print("You chose a door that doesn't exist. Game Over!!!!")
               
