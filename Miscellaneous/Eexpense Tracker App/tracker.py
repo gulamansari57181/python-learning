@@ -17,8 +17,8 @@ print(dt)
 filename = "text.csv"
 
 expenses = []
-
 isStopped = False
+
 # open file in write mode 
 with open(filename,"a",newline="") as file:
     csvwriter = csv.writer(file)
@@ -26,11 +26,10 @@ with open(filename,"a",newline="") as file:
     # csvwriter.writerow(dt)
     while not isStopped:
      xp = int(input("Write your expenses(type 0 to stopped)"))
-     
      if xp !=0:
             csvwriter.writerow([dt,xp])
-            expenses.append(xp)
             # output to csv file : 21/09/22
+            expenses.append(xp)
      else:
         isStopped = True
 print(expenses) 
