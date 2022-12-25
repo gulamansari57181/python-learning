@@ -20,7 +20,8 @@ from.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-
+    # default url
+    path("",index),
     path("index/",index),
  
     path("aboutUs/",aboutUs),
