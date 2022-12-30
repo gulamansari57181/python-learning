@@ -35,11 +35,14 @@ class Atm:
         elif choice == '3' :
             self.withdraw_money()
             
-        # elif choice == '4' :
+        elif choice == '4' :
+            self.deposit_amt()
         
+        elif choice =='5':
+            self.change_pin()
         
         else:
-            print("Thank you  for banking with us ! have a great day !!")
+            print("Thank you  for banking with us ! Have a great day !!")
             exit() 
               
     def createPin(self):
@@ -78,19 +81,43 @@ class Atm:
 
     # To implement withdraw money method
     def withdraw_money(self):
-        tepm_pin = input("Please enter your pin : ")
+        temp_pin = input("Please enter your pin : ")
         
-        if tepm_pin == self.pin:
+        if temp_pin == self.pin:
             temp_amt = int(input("Enter amount you want to withdraw : "))
             
             if int(self.balance)>temp_amt:
              self.balance =int(self.balance) - temp_amt
-             print(f"Amount withdraw is successful. Your Balance is {self.balance}")
+             print(f"Amount withdraw is successful. Your Balance is {self.balance} Rs.")
              
             else:
                 print("Your account balance is too low ! Gareeb !!")   
         else:
              print("Entered password was wrong! Try again .")
         self.menu()     
+        
+        # To implement deposit money method
+    def deposit_amt(self):
+         temp_pin = input("Please enter your pin : ")
+        
+         if temp_pin == self.pin:
+            temp_amt = int(input("Enter amount you want to deposit : "))
+            self.balance = int(self.balance) + temp_amt
+            print(f"Now your account balance is {self.balance} Rs.")
+         else:
+             print("Entered password was wrong! Try again .")
+         self.menu()     
+    
+        #To implemet change pin method
+        
+    def change_pin(self):
+        temp_pin = input("Please enter your pin : ")
+        
+        if temp_pin == self.pin:
+            new_pin = input("Please enter new  pin :")
+        else:
+             print("Entered password was wrong! Try again .")
+        self.menu()     
+             
 # Creating Atm object 
 user1 = Atm()
