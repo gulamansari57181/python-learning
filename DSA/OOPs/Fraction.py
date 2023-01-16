@@ -50,4 +50,13 @@ print(frcation1 - fraction2)
 print(frcation1 * fraction2)
 print(frcation1 / fraction2)
 
+
+# Output:
+# Fraction is : 1/3
+# Fraction is : 2/3
+# Result of add is : 9/9
+# Result of sub is : -3/9
+# Result of multiplication is : 2/9
+# Result of division is : 3/6
+
         
