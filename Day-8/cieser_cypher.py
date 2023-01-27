@@ -3,36 +3,32 @@ alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n'
 direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n")
 text = input("Type your message:\n").lower()
 shift = int(input("Type the shift number:\n"))
-
-#TODO-1: Create a function called 'encrypt' that takes the 'text' and 'shift' as inputs.
- #TODO-2: Inside the 'encrypt' function, shift each letter of the 'text' forwards in the alphabet by the shift amount and print the encrypted text.  
-    #e.g. 
-    #plain_text = "hello"
-    #shift = 5
-    #cipher_text = "mjqqt"
-    #print output: "The encoded text is mjqqt"
-
-    ##HINT: How do you get the index of an item in a list:
-    #https://stackoverflow.com/questions/176918/finding-the-index-of-an-item-in-a-list
-
-    ##🐛Bug alert: What happens if you try to encode the word 'civilization'?🐛if postion is greater than 25 then we have to use module operator
     
+# To make ceser function which encrypts or decrypts text based on user input
 
-def encrypt(message, shift):
-    cipher_text=""
+def ceaser(message,shift,choice):
+     # To take message in shift each charcacter nakward by shift amount
+    ceser_message=""
+    if choice =="decode":
+            shift *=-1   
     for letter in range(len(message)):
         # To take each character in the message and replace it with next character with shift number
         
         position=alphabet.index(message[letter])
-        new_position =position +shift
+       
+        new_position =position + shift
         if new_position>=26:
-            new_position = new_position%26
-        cipher_text +=alphabet[new_position]      
-        
+            new_position=new_position - 26
+        elif new_position<0:
+            new_position = new_position + 26
+        ceser_message +=alphabet[new_position]
      
-    print(cipher_text)   
+     
+    return ceser_message
+    
+result=ceaser(message=text,shift=shift,choice=direction)
 
-
-encrypt(message=text,shift=shift)   
-
-#TODO-3: Call the encrypt function and pass in the user inputs. You should be able to test the code and encrypt a message. 
+if direction =="encode":
+    print(f"Encrypted message is : {result}")
+else:
+     print(f"Decrypted message is : {result}")
