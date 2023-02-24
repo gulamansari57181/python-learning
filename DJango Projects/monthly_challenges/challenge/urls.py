@@ -9,6 +9,7 @@ urlpatterns = [
     # path("january",views.index),
     # path("febuary",views.febuary),
     # To handle any string url passed. we will use place holder syntax
-    
-    path("<month>",views.monthly_challenge)
+    path("<int:month>",views.monthly_challenge_by_number),
+    path("<str:month>",views.monthly_challenge)
+   
 ]

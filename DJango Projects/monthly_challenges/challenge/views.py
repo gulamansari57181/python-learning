@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseNotFound , HttpResponseRedirect
 
 
 # To create month: challenge map
@@ -21,11 +21,20 @@ challenge_text={
 }
 
 # Create your views here.
-def index(request):
-    return HttpResponse("<h1>Hello How you doing ??????</h1>")
-
-# Create a view for febuary
-def monthly_challenge(request, month):
+def monthly_challenge_by_number(request,month):
+    # To redirect 1- january, 2-febuary
+    months_list=list(challenge_text.keys())
+    redirect_month=months_list[month-1]
     
-    challenge=challenge_text.get(month)
-    return HttpResponse(f"<h1>Challenge : {challenge} </h1>") 
+    return HttpResponseRedirect("/challenge/" + redirect_month)
+    
+
+# Create a view for dynamic route
+def monthly_challenge(request, month):
+    try:
+        challenge=challenge_text[month]
+        return HttpResponse(f"<h1>Challenge : {challenge} </h1>") 
+    except:
+        return HttpResponseNotFound("Mentioned month is not a valid month !!")
+        
+    
