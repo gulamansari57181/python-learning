@@ -9,18 +9,51 @@ for i in range(size):
     numbers.append(num)
 
 
+# def binary_search(arr, element, start, end):
+#     while start <= end:
+#         mid = (start + end) // 2
+#         if arr[mid] == element:
+#             return mid
+#         elif arr[mid] > element:
+#             end = mid - 1
+#         else:
+#             start = mid + 1
+
+#     return -1
+
 def binary_search(arr, element, start, end):
-    while start <= end:
-        mid = (start + end) // 2
+    while start<=end:
+        mid = start +(end-start) // 2
+        
         if arr[mid] == element:
+            # Element found
             return mid
         elif arr[mid] > element:
-            end = mid - 1
-        else:
-            start = mid + 1
-
+            # Element must me lower than mid value, thus we will search im left space
+             return  binary_search(arr, element, start,mid-1)
+        elif arr[mid] < element :
+             return binary_search(arr, element, mid +1,end)
+        
     return -1
-
+            
+   
+   
+   
+    def search(self,arr, N, X):
+        #Your code here
+        low=0
+        high=N-1
+        # Binary Search
+        while(low<=high):
+            mid = low +(high - low)//2
+            if arr[mid]==X:
+                return mid
+            elif arr[mid]>X:
+                high=  mid -1
+            else:
+                low = mid +1
+        return -1
+   
 
 # get element to be search
 ele = int(input("Enter elment to be search :"))
