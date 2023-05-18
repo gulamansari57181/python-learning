@@ -26,5 +26,28 @@ def twoSumLinear(arr,target):
             
     return -1,-1
 
-x,y = twoSumLinear(numbers,target)
-print(f"Elements whose pair sum equal to target are : {x} and {y}")
+
+
+
+def twoSumPointer(arr,target):
+    left=0
+    right=len(arr)-1
+    
+    while(left<right):
+        pairSum=arr[left] +arr[right]
+        
+        if pairSum==target:
+            return arr[left], arr[right]
+        elif pairSum<target:
+            left +=1
+        else:
+            right -=1
+    return -1,-1
+        
+
+# x,y = twoSumLinear(numbers,target)
+x,y = twoSumPointer(numbers,target)
+if x != -1:
+ print(f"Elements whose pair sum equal to target are : {x} and {y}")
+else:
+    print("Such pair does not exist !!")
