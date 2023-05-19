@@ -42,8 +42,6 @@ for number in numbers:
             
 
 #To print longest sequence 
-
-
 print("Longest csequence of number is as follows : ")
 for i in range(msp,msp+ml+1):
     print(i,end=" ")   
