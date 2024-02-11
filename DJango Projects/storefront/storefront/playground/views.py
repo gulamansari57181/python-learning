@@ -5,3 +5,7 @@ from django.http  import HttpResponse
 
 def playground(request):
     return HttpResponse("Hello Guys Chai pilo !!!")
+
+
+def playground2(request):
+    return HttpResponse("Kaisa laga mera mazak!!!")
