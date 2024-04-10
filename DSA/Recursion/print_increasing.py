@@ -1,6 +1,6 @@
  #A program to print numbers upto n in recursive manner
 
-num=int(input("Enter number upto whic we have to print numbesrs: "))
+num=int(input("Enter number upto which we have to print numbesrs: "))
 
 def print_increasing(n):
     # Base condition

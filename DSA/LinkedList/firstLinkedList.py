@@ -2,10 +2,10 @@
 
 # To create a node instance
 class Node:
-   def __init__(self,value):
+   def __init__(self,value=None,next=None):
         # To create a new node
         self.value=value
-        self.next=None
+        self.next=next
         
 # To implement LinkedList class
 class LinkedList:
