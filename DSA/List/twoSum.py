@@ -14,7 +14,7 @@ for i in range(size):
 target=int(input("Enter target element :"))
 
 
-# Approach 1: Applying the linear serach - O(n^2)
+# Approach 1: Applying the Quadtratic serach - O(n^2)
 
 def twoSumLinear(arr,target):
     
