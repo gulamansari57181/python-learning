@@ -3,27 +3,30 @@
 
 
 numbers=[3,2,1]
+sequence=[]
 
-
-def print_subsequence(idx,numbers,ls):
+def subsequence(idx,numbers,ls):
     
     if idx==len(numbers):
-        print(ls)
-        return
+    # If do not pass copy of ls, it will inplace reference to ls and result will be drasticall weired.   
+        sequence.append(ls.copy())
+        
+       
     
-    # Take an element and add to list
-    ls.append(numbers[idx])
-    
-    print_subsequence(idx+1,numbers,ls)
-    
-    # Once return back, we are not taking the added element and again generating the list
-    
-    ls.pop()
-    print_subsequence(idx+1,numbers,ls)
-    
+    else:
+            # Take an element and add to list
+        ls.append(numbers[idx])
+        
+        subsequence(idx+1,numbers,ls)
+        
+        # Once return back, we are not taking the added element and again generating the list
+        ls.pop()
+        subsequence(idx+1,numbers,ls)
+        
     
 
 # Function call
+subsequence(0,numbers,[])
 
-print_subsequence(0,numbers,[])
+print(sequence)
     
