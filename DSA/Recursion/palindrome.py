@@ -7,9 +7,9 @@ def palindrome(str,left,right):
     
     if str[left]==str[right]:
         return palindrome(str,left+1,right-1)
+    else:
     
-    return False
-
+        return False
 
 
 if palindrome(str,0,len(str)-1):

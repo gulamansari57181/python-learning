@@ -1,0 +1,19 @@
+Metadata-Version: 2.1
+Name: mstpy
+Version: 0.0
+Summary: Calculate and visualize Gaussian, Binomial, and Normal distributions
+Author: Your Name
+Author-email: gulamansari57181@gmail.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/plain
+
+# mstpy
+
+Name : mstpy
+Version : 0.0
+Description : Can be used to calculate and visualise Gaussian, Binomial and Normal distributions
+Packages : mstpy 
+Author_email : gulamansari57181@gmail.com 

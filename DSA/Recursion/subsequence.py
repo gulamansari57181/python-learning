@@ -8,22 +8,19 @@ sequence=[]
 def subsequence(idx,numbers,ls):
     
     if idx==len(numbers):
-    # If do not pass copy of ls, it will inplace reference to ls and result will be drasticall weired.   
+    # If do not pass copy of ls, it will inplace reference to ls and result will be drastically weired.   
         sequence.append(ls.copy())
+        return
         
-       
-    
-    else:
-            # Take an element and add to list
-        ls.append(numbers[idx])
+     # Take an element and add to list
+    ls.append(numbers[idx])
         
-        subsequence(idx+1,numbers,ls)
+    subsequence(idx+1,numbers,ls)
         
-        # Once return back, we are not taking the added element and again generating the list
-        ls.pop()
-        subsequence(idx+1,numbers,ls)
+    # Once return back, we are not taking the added element and again generating the list
+    ls.pop()
+    subsequence(idx+1,numbers,ls)
         
-    
 
 # Function call
 subsequence(0,numbers,[])

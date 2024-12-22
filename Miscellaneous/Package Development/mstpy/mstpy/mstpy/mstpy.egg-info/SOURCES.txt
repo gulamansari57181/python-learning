@@ -1,0 +1,7 @@
+setup.cfg
+setup.py
+mstpy/mstpy.egg-info/PKG-INFO
+mstpy/mstpy.egg-info/SOURCES.txt
+mstpy/mstpy.egg-info/dependency_links.txt
+mstpy/mstpy.egg-info/not-zip-safe
+mstpy/mstpy.egg-info/top_level.txt

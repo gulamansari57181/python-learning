@@ -10,16 +10,12 @@ def subsequence(idx,ls,sum):
     
     if idx==len(numbers) :
         if k==sum:
-            if ls not in sequence:
-                sequence.append(ls.copy()) 
-                 # If do not pass copy of ls, it will inplace reference to ls and result will be drasticall weired.   
-                print(ls.copy())
-                return True
+            print(ls)
+            return True
         else:
             return False        
             
-       
-                
+                        
     
     else:
             # Take an element and add to list
@@ -36,7 +32,8 @@ def subsequence(idx,ls,sum):
         
         if(subsequence(idx+1,ls,sum)):
             return True
-        return False   s
+        
+        return False   
     
         
     

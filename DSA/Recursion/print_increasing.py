@@ -12,8 +12,7 @@ def print_increasing(n):
     print(n)
     
     
-    
-    
+ 
 def print_decreasing(n):
     # Base condition
     if n==0:
