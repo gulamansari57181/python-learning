@@ -45,7 +45,7 @@ int main() {
         }
     }
 
-    // Cumulative sum calculation
+    // Cumulative sum calculation if impact needs to be calculated( Range addition)
     vector<int> prefixsum(size, 0);
     prefixsum[0] = nums[0];
     for (int c = 1; c < nums.size(); c++) {
